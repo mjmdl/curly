@@ -2,6 +2,7 @@
 
 #include "app.h"
 #include "appwindow.h"
+#include "reqinput.h"
 
 struct _CurlyAppWindow
 {
@@ -14,6 +15,8 @@ G_DEFINE_TYPE (CurlyAppWindow, curly_app_window,
 static void
 curly_app_window_init (CurlyAppWindow *window)
 {
+  GtkWidget *req = curly_req_input_new ();
+  gtk_window_set_child (GTK_WINDOW (window), req);
 }
 
 static void

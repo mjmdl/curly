@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object id="wrapper" class="GtkBox">
+    <property name="orientation">horizontal</property>
+    <child>
+      <object id="verbs" class="GtkDropDown">
+	<property name="model">
+	  <object class="GtkStringList">
+	    <items>
+	      <item>GET</item>
+	      <item>POST</item>
+	      <item>PATCH</item>
+	      <item>PUT</item>
+	      <item>DELETE</item>
+	    </items>
+	  </object>
+	</property>
+      </object>
+    </child>
+    <child>
+      <object id="url" class="GtkText">
+	<property name="hexpand">true</property>
+	<property name="placeholder-text">http://localhost:3000/foobar</property>
+      </object>
+    </child>
+    <child>
+      <object id="sender" class="GtkButton">
+	<property name="label">Send</property>
+      </object>
+    </child>
+  </object>
+</interface>
