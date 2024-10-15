@@ -10,7 +10,7 @@ struct _CurlyAppWindow
 };
 
 G_DEFINE_TYPE (CurlyAppWindow, curly_app_window,
-	       GTK_TYPE_APPLICATION_WINDOW)
+               GTK_TYPE_APPLICATION_WINDOW)
 
 static void
 curly_app_window_init (CurlyAppWindow *window)
@@ -28,9 +28,9 @@ GtkWidget *
 curly_app_window_new (CurlyApp *app)
 {
   return g_object_new (CURLY_TYPE_APP_WINDOW,
-		       "application", app,
-		       "title", "Curly",
-		       "default-width", 800,
-		       "default-height", 600,
-		       NULL);
+                       "application", app,
+                       "title", "Curly",
+                       "default-width", 800,
+                       "default-height", 600,
+                       NULL);
 }

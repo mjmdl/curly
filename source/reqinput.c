@@ -11,7 +11,7 @@ struct _CurlyReqInput
 };
 
 G_DEFINE_TYPE (CurlyReqInput, curly_req_input,
-	       GTK_TYPE_BOX)
+               GTK_TYPE_BOX)
 
 static void
 sender_clicked(GtkButton *sender, CurlyReqInput *input)
@@ -19,7 +19,7 @@ sender_clicked(GtkButton *sender, CurlyReqInput *input)
   guint selected = gtk_drop_down_get_selected (GTK_DROP_DOWN (input->verbs));
   GListModel *model = gtk_drop_down_get_model (GTK_DROP_DOWN (input->verbs));
   const gchar *verb = gtk_string_list_get_string (GTK_STRING_LIST (model),
-						  selected);
+                                                  selected);
   if (!verb || verb[0] == '\0')
     {
       g_print ("An invalid verb was selected!\n");
@@ -48,24 +48,24 @@ sender_clicked(GtkButton *sender, CurlyReqInput *input)
 
     case 'P':
       switch (verb[1])
-	{
-	case 'A':
-	  curl_easy_setopt (curl, CURLOPT_CUSTOMREQUEST, "PATCH");
-	  break;
-	  
-	case 'O':
-	  curl_easy_setopt (curl, CURLOPT_MIMEPOST, 0);
-	  break;
-	  
-	case 'U':
-	  curl_easy_setopt (curl, CURLOPT_CUSTOMREQUEST, "PUT");
-	  break;
-	  
-	case '\0':
-	default:
-	  g_print ("An invalid verb was selected!\n");
-	  return;
-	}
+        {
+        case 'A':
+          curl_easy_setopt (curl, CURLOPT_CUSTOMREQUEST, "PATCH");
+          break;
+          
+        case 'O':
+          curl_easy_setopt (curl, CURLOPT_MIMEPOST, 0);
+          break;
+          
+        case 'U':
+          curl_easy_setopt (curl, CURLOPT_CUSTOMREQUEST, "PUT");
+          break;
+          
+        case '\0':
+        default:
+          g_print ("An invalid verb was selected!\n");
+          return;
+        }
       break;
       
     default:
@@ -119,8 +119,8 @@ curly_req_input_init(CurlyReqInput *input)
       return;
     }  
   g_signal_connect (sender, "clicked",
-		    G_CALLBACK (sender_clicked),
-		    input);
+                    G_CALLBACK (sender_clicked),
+                    input);
 
   input->verbs = GTK_WIDGET (verbs);
   input->url = GTK_WIDGET (url);
@@ -135,7 +135,7 @@ GtkWidget *
 curly_req_input_new (void)
 {
   return g_object_new (CURLY_TYPE_REQ_INPUT,
-		       "orientation", GTK_ORIENTATION_VERTICAL,
-		       "spacing", 0,
-		       NULL);
+                       "orientation", GTK_ORIENTATION_VERTICAL,
+                       "spacing", 0,
+                       NULL);
 }

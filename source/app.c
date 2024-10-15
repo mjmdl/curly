@@ -9,7 +9,7 @@ struct _CurlyApp
 };
 
 G_DEFINE_TYPE (CurlyApp, curly_app,
-	       GTK_TYPE_APPLICATION)
+               GTK_TYPE_APPLICATION)
 
 static void
 curly_app_init (CurlyApp *app)
@@ -33,7 +33,7 @@ GApplication *
 curly_app_new (void)
 {
   return g_object_new (CURLY_TYPE_APP,
-		       "application-id", "com.github.mjmdl.curly",
-		       "flags", G_APPLICATION_DEFAULT_FLAGS,
-		       NULL);
+                       "application-id", "com.github.mjmdl.curly",
+                       "flags", G_APPLICATION_DEFAULT_FLAGS,
+                       NULL);
 }
