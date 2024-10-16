@@ -5,7 +5,7 @@
 
 G_BEGIN_DECLS
 
-#define CURLY_TYPE_APP (curly_app_get_type ())
+#define CURLY_APP_TYPE (curly_app_get_type ())
 
 G_DECLARE_FINAL_TYPE (CurlyApp, curly_app,
                       CURLY, APP,

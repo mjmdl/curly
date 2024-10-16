@@ -3,18 +3,18 @@
 
 #include "reqinput.h"
 
-struct _CurlyReqInput
+struct _ReqInput
 {
   GtkBox parent;
   GtkWidget *verbs;
   GtkWidget *url;
 };
 
-G_DEFINE_TYPE (CurlyReqInput, curly_req_input,
+G_DEFINE_TYPE (ReqInput, req_input,
                GTK_TYPE_BOX)
 
 static void
-sender_clicked(GtkButton *sender, CurlyReqInput *input)
+sender_clicked(GtkButton *sender, ReqInput *input)
 {
   guint selected = gtk_drop_down_get_selected (GTK_DROP_DOWN (input->verbs));
   GListModel *model = gtk_drop_down_get_model (GTK_DROP_DOWN (input->verbs));
@@ -81,7 +81,7 @@ sender_clicked(GtkButton *sender, CurlyReqInput *input)
 }
      
 static void
-curly_req_input_init(CurlyReqInput *input)
+req_input_init (ReqInput *input)
 {
   GtkBuilder *builder = gtk_builder_new_from_file ("widgets/reqinput.ui");
   if (!builder)
@@ -127,14 +127,14 @@ curly_req_input_init(CurlyReqInput *input)
 }
 
 static void
-curly_req_input_class_init(CurlyReqInputClass *klass)
+req_input_class_init(ReqInputClass *klass)
 {
 }
 
 GtkWidget *
-curly_req_input_new (void)
+req_input_new (void)
 {
-  return g_object_new (CURLY_TYPE_REQ_INPUT,
+  return g_object_new (REQ_INPUT_TYPE,
                        "orientation", GTK_ORIENTATION_VERTICAL,
                        "spacing", 0,
                        NULL);

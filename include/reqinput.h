@@ -5,13 +5,13 @@
 
 G_BEGIN_DECLS
 
-#define CURLY_TYPE_REQ_INPUT (curly_req_input_get_type ())
+#define REQ_INPUT_TYPE (req_input_get_type ())
 
-G_DECLARE_FINAL_TYPE (CurlyReqInput, curly_req_input,
-                      CURLY, REQ_INPUT,
+G_DECLARE_FINAL_TYPE (ReqInput, req_input,
+                      REQ, INPUT,
                       GtkBox)
 
-GtkWidget *curly_req_input_new (void);
+GtkWidget *req_input_new (void);
 
 G_END_DECLS
 

@@ -19,7 +19,7 @@ curly_app_init (CurlyApp *app)
 static void
 curly_app_activate (GApplication *application)
 {
-  GtkWidget *window = curly_app_window_new (CURLY_APP (application));
+  GtkWidget *window = app_window_new (CURLY_APP (application));
   gtk_window_present (GTK_WINDOW (window));
 }
 
@@ -32,7 +32,7 @@ curly_app_class_init (CurlyAppClass *klass)
 GApplication *
 curly_app_new (void)
 {
-  return g_object_new (CURLY_TYPE_APP,
+  return g_object_new (CURLY_APP_TYPE,
                        "application-id", "com.github.mjmdl.curly",
                        "flags", G_APPLICATION_DEFAULT_FLAGS,
                        NULL);
